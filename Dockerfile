@@ -9,8 +9,6 @@ FROM openjdk:17-jdk
 VOLUME /uploadtest
 WORKDIR /app
 
-# keystore 파일을 복사합니다 (여기서 실제 경로를 확인하세요)
-COPY --from=build /app/keystore.p12 /app/keystore.p12
 
 # JAR 파일을 복사합니다
 COPY --from=build /app/target/*.jar app.jar
