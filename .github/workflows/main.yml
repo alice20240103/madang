@@ -71,5 +71,5 @@ jobs:
               -e DB_PWD=${{ secrets.DB_PWD }} \
               -e SPRING_PROFILES_ACTIVE=prod \
               ${{ secrets.DOCKER_USER }}/myapp:latest \
-              --server.ssl.key-store=/app/keystore.p12 \
+              --server.ssl.key-store=${{ secrets.KEYSTORE }} \
               --server.ssl.keyStoreType=PKCS12
