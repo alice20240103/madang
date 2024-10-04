@@ -63,7 +63,7 @@ jobs:
             docker stop myapp || true
             docker rm myapp || true
             # SSL keystore 파일 생성
-            echo "${{ secrets.KEYSTORE }}" | base64 --decode > /app/keystore.p12
+            # echo "${{ secrets.KEYSTORE }}" | base64 --decode > /app/keystore.p12
             # 새로운 컨테이너 실행 (HTTPS)
             docker run -d -p 443:443 --name myapp --network=mynet \
               -e DB_URL=${{ secrets.DB_URL }} \
