@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,6 +8,7 @@
 	<h2>도서등록</h2>
 	<hr>
 	<form method="post" action="/book/insert">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 		도서번호 : <input type="text" name="no"><br>
 		도서이름 : <input type="text" name="title"><br>
 		도서가격 : <input type="text" name="price"><br>
